@@ -29,15 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin_credentials` (
   `USERNAME` varchar(50) COLLATE utf16_bin NOT NULL,
-  `PASSWORD` varchar(50) COLLATE utf16_bin NOT NULL
+  `PASSWORD` varchar(50) COLLATE utf16_bin NOT NULL,
+  `PHARMACY_NAME` varchar(50) COLLATE utf16_bin NOT NULL,
+  `ADDRESS` varchar(50) COLLATE utf16_bin NOT NULL,
+  `EMAIL` varchar(50) COLLATE utf16_bin NOT NULL,
+  `CONTACT_NUMBER` varchar(10) COLLATE utf16_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_bin;
 
 --
 -- Dumping data for table `admin_credentials`
 --
 
-INSERT INTO `admin_credentials` (`USERNAME`, `PASSWORD`) VALUES
-('admin', 'admin123');
+INSERT INTO `admin_credentials` (`USERNAME`, `PASSWORD`,`PHARMACY_NAME`,`ADDRESS`,`EMAIL`,`CONTACT_NUMBER`) VALUES
+('admin', 'admin123', 'admin pharma', 'Colombo','123admin@gmail.com', '077777777');
 
 -- --------------------------------------------------------
 
@@ -59,11 +63,11 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`ID`, `NAME`, `CONTACT_NUMBER`, `ADDRESS`, `DOCTOR_NAME`, `DOCTOR_ADDRESS`) VALUES
-(4, 'Kiran Suthar', '1234567690', 'Andheri East', 'Anshari', 'Andheri East'),
-(6, 'Aditya', '7365687269', 'Virar West', 'Xyz', 'Virar West'),
-(11, 'Shivam Tiwari', '6862369896', 'Dadar West', 'Dr Kapoor', 'Dadar East'),
-(13, 'Varsha Suthar', '7622369694', 'Rani Station', 'Dr Ramesh', 'Rani Station'),
-(14, 'Prakash Bhattarai', '9802851472', 'Pokhara-16, Dhikidada', 'Hari Bahadur', 'Matepani-12');
+(4, 'Lal Keerthisinghe', '0716555843', 'Colombo 06', 'Dr Pandithakorala', 'Colombo 06'),
+(6, 'Gowry Ramakrishnan', '0774436123', 'Colombo 02', 'Dr Sameera', 'Colombo 06'),
+(11, 'Peter Parker', '0786236986', 'Hanwella', 'Dr Weerasinghe', 'Godagama'),
+(13, 'Varsha Perera', '0762236969', 'Nugegoda', 'Dr Ramesh', 'Homagama'),
+(14, 'Prakash Rajapaksha', '070285172', 'Awissawella', 'Dr Galhena', 'Godagama');
 
 -- --------------------------------------------------------
 
@@ -85,8 +89,8 @@ CREATE TABLE `invoices` (
 --
 
 INSERT INTO `invoices` (`INVOICE_ID`, `NET_TOTAL`, `INVOICE_DATE`, `CUSTOMER_ID`, `TOTAL_AMOUNT`, `TOTAL_DISCOUNT`) VALUES
-(1, 30, '2021-10-19', 14, 30, 0),
-(2, 2626, '2021-10-19', 6, 2626, 0);
+(1, 30, '2022-10-19', 14, 30, 0),
+(2, 2626, '2022-10-19', 6, 2626, 0);
 
 -- --------------------------------------------------------
 
@@ -108,9 +112,9 @@ CREATE TABLE `medicines` (
 
 INSERT INTO `medicines` (`ID`, `NAME`, `PACKING`, `GENERIC_NAME`, `SUPPLIER_NAME`) VALUES
 (1, 'Nicip Plus', '10tab', 'Paracetamole', 'BDPL PHARMA'),
-(2, 'Crosin', '10tab', 'Hdsgvkvajkcbja', 'Kiran Pharma'),
+(2, 'Crosin', '10tab', 'Hdsgvkvajkcbja', 'Nisal Pharma'),
 (4, 'Dolo 650', '15tab', 'paracetamole', 'BDPL PHARMA'),
-(5, 'Gelusil', '10tab', 'mint fla', 'Desai Pharma');
+(5, 'Gelusil', '10tab', 'mint fla', 'Ceymed Pharma');
 
 -- --------------------------------------------------------
 
@@ -172,9 +176,9 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`ID`, `NAME`, `EMAIL`, `CONTACT_NUMBER`, `ADDRESS`) VALUES
-(1, 'Desai Pharma', 'desai@gmail.com', '9948724242', 'Mahim East'),
+(1, 'Ceymed Pharma', 'desai@gmail.com', '9948724242', 'Mahim East'),
 (2, 'BDPL PHARMA', 'bdpl@gmail.com', '8645632963', 'Santacruz West'),
-(9, 'Kiran Pharma', 'kiranpharma@gmail.com', '7638683637', 'Andheri East'),
+(9, 'Nisal Pharma', 'kiranpharma@gmail.com', '7638683637', 'Andheri East'),
 (10, 'Rsrnrnrndnn', 'ydj', '3737355538', '3fndfndfndndfnfdndfn'),
 (11, 'Dfnsfndfndf', 'fnsn', '5475734385', 'Ndnss4yrhrhdhrdhrh'),
 (12, 'SS Distributors', 'ssdis@gamil.com', '3867868752', 'Matunga West'),

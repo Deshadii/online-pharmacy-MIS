@@ -4,6 +4,8 @@
   if($con) {
     $query = "UPDATE admin_credentials SET IS_LOGGED_IN = 'false'";
     $result = mysqli_query($con, $query);
+    header("Location: index.php");
+    exit(); 
   }
 ?>
 

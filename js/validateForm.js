@@ -1,4 +1,4 @@
-function notNull(text, error) {
+function notNull(text, error) {       //
   var result = document.getElementById(error);
   result.style.display = "block";
   if(text < 0) {

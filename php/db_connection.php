@@ -4,9 +4,9 @@
   $PASSWORD = '';
   $DB = 'pharmacy';
 
-  @$con = mysqli_connect($SERVER, $USERNAME, $PASSWORD, $DB)
+  @$con = mysqli_connect($SERVER, $USERNAME, $PASSWORD, $DB) //make the connection with mysql db 
   or
-  die("<div class='text-danger text-center h5'>Oops, Unable to connect with database!</div>");
+  die("<div class='text-danger text-center h5'>Oops, Unable to connect with database!</div>"); 
 
   if(isset($_GET['action']) && $_GET['action'] == 'is_logged_in') {
     $query = "SELECT IS_LOGGED_IN FROM admin_credentials";
